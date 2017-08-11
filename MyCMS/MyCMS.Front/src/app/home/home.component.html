@@ -1,0 +1,24 @@
+﻿<div class="col-md-8">
+    <div>
+        <div *ngFor="let post of posts">
+            <h2>{{post.title}}</h2>
+            <p><small>{{ post.publishDate }}</small></p>
+            <div [innerHTML]="post.content"></div>
+            <hr />
+        </div>
+    </div>
+</div>
+<div class="col-md-4">
+    <div class="c-recent-post">
+        <h3>RECENT POST</h3>
+        <ul>
+            <li *ngFor="let post of posts"><a [routerLink]="['/post', post.rowKey]">{{ post.title }}</a></li>
+        </ul>
+    </div>
+    <div class="c-links">
+        <h3>LINKS</h3>
+        <ul>
+            <li><a [routerLink]="['/admin']">admin</a></li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="col-md-6 col-md-offset-3">
+    <h2>EDIT POST</h2>
+    <div>
+        <label>
+            <span>title: </span>
+            <input type="text" [(ngModel)]="post.title" />
+        </label>
+        <label>
+            <span>body: </span>
+            <textarea [(ngModel)]="post.content"></textarea>
+        </label>
+    </div>
+    <div>
+        <button (click)="savePost()">Save</button>
+    </div>
+</div>

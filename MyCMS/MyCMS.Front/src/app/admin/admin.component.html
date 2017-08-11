@@ -1,0 +1,26 @@
+﻿<h2>ADMIN</h2>
+<div class="col-md-12">
+
+    <h3>POST LIST</h3>
+    <div class="row">
+        <div class="col-md-4">
+            <a (click)="createNewPost()">New Post</a>
+            <div *ngFor="let post of posts">
+                <a (click)="editPost(post)">({{ post.publishDate }}) {{ post.title }}</a>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <post-edit [post]="currentEditPost"></post-edit>
+        </div>
+    </div>
+
+    <h3>IMPORT FROM WORDPRESS EXPORT XML</h3>
+    <div class="row">
+        <div class="col-md-12">
+            <input #fileInput type="file" />
+            <button #importButton (click)="import()">Import</button>
+        </div>
+    </div>
+
+    <p><a [routerLink]="['/login']">Logout</a></p>
+</div>
